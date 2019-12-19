@@ -7,6 +7,7 @@ def main():
 	db = AccessDB(ftp.get_file())
 	for row in db.get_rows_from_date('asdf'):
 		print(row)
+	ftp.close()
 
 
 if __name__ == '__main__':
