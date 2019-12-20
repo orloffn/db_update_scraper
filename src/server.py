@@ -22,10 +22,9 @@ class FTPServer:
         self.ftp.cwd(self.config['directory'])
         local_file = '/tmp/%s' % self.config['file']
         fh = open(local_file, 'wb')
-        self.ftp.retrbinary('RETR %s' % local_file, fh.write)
+        self.ftp.retrbinary('RETR %s' % self.config['file'], fh.write)
         fh.close()
         return local_file
 
     def close(self):
         self.ftp.quit()
-        

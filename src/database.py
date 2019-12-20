@@ -19,4 +19,3 @@ class AccessDB:
         cursor = self.conn.cursor()
         cursor.execute('SELECT * FROM %s' % self.config['table'])
         return cursor.fetchall()
-        
